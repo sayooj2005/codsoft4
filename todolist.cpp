@@ -2,11 +2,8 @@
 #include <windows.h>
 using namespace std;
 
-// Function to print tasks
 void print_tasks(string t[], bool completed[], int c) {
-    cout << "\n---------------------------\n";
     cout << "         TASKS TO DO       \n";
-    cout << "---------------------------\n";
     if (c == 0) {
         cout << "No tasks available.\n";
     } else {
@@ -18,10 +15,10 @@ void print_tasks(string t[], bool completed[], int c) {
             cout << endl;
         }
     }
-    cout << "---------------------------\n";
+    
 }
 
-// Function to add a task
+
 void add_task(string t[], bool completed[], int &c, int max_tasks)
  {
     if (c >= max_tasks)
@@ -29,16 +26,15 @@ void add_task(string t[], bool completed[], int &c, int max_tasks)
         cout << "\nTask list is full (Maximum: " << max_tasks << " tasks).\n";
     } else {
         cout << "\nEnter a new task: ";
-        cin.ignore(); // Clear the input buffer
+        cin.ignore(); 
         getline(cin, t[c]);
-        completed[c] = false; // Mark the new task as not completed
+        completed[c] = false; 
         cout << "Task added successfully!\n";
         c++;
     }
     system("pause");
 }
 
-// Function to mark a task as completed
 void mark_task_completed(bool completed[], int c) {
     if (c == 0) {
         cout << "No tasks available to mark as completed.\n";
@@ -59,11 +55,11 @@ void mark_task_completed(bool completed[], int c) {
 }
 
 int main() {
-    const int max_tasks = 10;  // Maximum number of tasks
-    string t[max_tasks];       // Array to store tasks
-    bool completed[max_tasks]; // Array to track task completion
-    int c = 0;                 // Counter for tasks
-    int opt = -1;              // User menu option
+    const int max_tasks = 10; 
+    string t[max_tasks];      
+    bool completed[max_tasks]; 
+    int c = 0;                 
+    int opt = -1;            
 
     while (opt != 0) {
         // MENU
